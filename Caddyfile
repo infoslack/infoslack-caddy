@@ -1,0 +1,38 @@
+http://www.infoslack.pro {
+	redir https://infoslack.pro
+}
+
+infoslack.pro {
+	root /cv
+	gzip
+	log stdout
+	errors stdout
+	header / {
+		Strict-Transport-Security "max-age=31536000"
+		X-XSS-Protection "1; mode=block"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+	}
+}
+
+www.infoslack.com {
+	redir https://infoslack.com
+}
+
+infoslack.com {
+	root /blog
+	gzip
+	tls infoslack@gmail.com
+	header / Strict-Transport-Security "max-age=31536000"
+	ext .html .htm
+	log stdout
+	errors stdout
+}
+
+http://lista.infoslack.com {
+	redir "https://groups.google.com/forum/#!forum/casadocodigo-linux"
+}
+
+http://docker.infoslack.com {
+	redir "https://groups.google.com/forum/#!forum/casadocodigo-docker"
+}
