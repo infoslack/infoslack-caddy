@@ -12,6 +12,8 @@ infoslack.pro {
 		X-XSS-Protection "1; mode=block"
 		X-Content-Type-Options "nosniff"
 		X-Frame-Options "DENY"
+		Referrer-Policy "origin"
+		Content-Security-Policy  "default-src: 'self'; script-src google-analytics.com bootstrapcdn.com googlecode.com; frame-ancestors 'none';"
 	}
 }
 
