@@ -30,11 +30,3 @@ infoslack.com {
 	log stdout
 	errors stdout
 }
-
-http://lista.infoslack.com {
-	redir "https://groups.google.com/forum/#!forum/casadocodigo-linux"
-}
-
-http://docker.infoslack.com {
-	redir "https://groups.google.com/forum/#!forum/casadocodigo-docker"
-}
