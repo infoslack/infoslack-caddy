@@ -3,18 +3,10 @@ http://www.infoslack.pro {
 }
 
 infoslack.pro {
-	root /cv
-	gzip
-	log stdout
-	errors stdout
-	header / {
-		Strict-Transport-Security "max-age=31536000"
-		X-XSS-Protection "1; mode=block"
-		X-Content-Type-Options "nosniff"
-		X-Frame-Options "DENY"
-		Referrer-Policy "no-referrer, strict-origin-when-cross-origin"
-		Content-Security-Policy  "default-src: 'self'; script-src https://google-analytics.com https://bootstrapcdn.com https://googlecode.com"
-	}
+	root * /cv
+	file_server
+	encode gzip
+	header Strict-Transport-Security max-age=31536000;
 }
 
 www.infoslack.com {
@@ -22,11 +14,9 @@ www.infoslack.com {
 }
 
 infoslack.com {
-	root /blog
-	gzip
+	root * /blog
+	file_server
+	encode gzip
 	tls infoslack@gmail.com
-	header / Strict-Transport-Security "max-age=31536000"
-	ext .html .htm
-	log stdout
-	errors stdout
+	header Strict-Transport-Security max-age=31536000;
 }
